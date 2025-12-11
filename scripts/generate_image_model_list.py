@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
-"""generate_model_list.py
+"""generate_image_model_list.py
 
-Reads `venice_models_text.json` and generates `venice_models_text_full.html`.
-The output HTML uses client-side rendering with embedded JSON to support
-dynamic sorting and filtering, consistent with other model pages.
+Reads `data/venice_models_image.json` and generates `output/venice_models_image.html`.
+The output HTML is self-contained with embedded JSON data and client-side sorting/filtering.
 """
 import json
 import pathlib
+import datetime
 
 # Paths
 BASE_DIR = pathlib.Path(__file__).resolve().parent
-JSON_PATH = BASE_DIR.parent / "data" / "venice_models_text.json"
-HTML_PATH = BASE_DIR.parent / "output" / "venice_models_text_full.html"
+JSON_PATH = BASE_DIR.parent / "data" / "venice_models_image.json"
+HTML_PATH = BASE_DIR.parent / "output" / "venice_models_image.html"
 
 def generate_html(models_data):
     # Convert models to JSON string for embedding
@@ -22,7 +22,7 @@ def generate_html(models_data):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venice Text Models</title>
+    <title>Venice Image Models</title>
     <style>
         :root {{
             --bg-color: #f8f9fa;
@@ -188,7 +188,7 @@ def generate_html(models_data):
 </head>
 <body>
     <div class="container">
-        <h1>Venice Text Models</h1>
+        <h1>Venice Image Models</h1>
 
         <div class="controls">
             <div class="search-box">
@@ -196,11 +196,9 @@ def generate_html(models_data):
             </div>
             <div class="sort-box">
                 <select id="sortSelect">
-                    <option value="price_low" selected>Sort by Price (Input Low)</option>
-                    <option value="default">Default Sort</option>
+                    <option value="price_low" selected>Sort by Price (Generation Low)</option>
                     <option value="name">Sort by Name</option>
                     <option value="date_new">Sort by Date (Newest)</option>
-                    <option value="context_high">Sort by Context (High to Low)</option>
                 </select>
             </div>
         </div>
@@ -211,10 +209,9 @@ def generate_html(models_data):
                     <tr>
                         <th onclick="sortTable('name')">Model</th>
                         <th onclick="sortTable('date')">Created</th>
-                        <th onclick="sortTable('price')">Pricing (USD/1M)</th>
-                        <th onclick="sortTable('context')">Context</th>
-                        <th>Capabilities</th>
+                        <th onclick="sortTable('price')">Pricing (USD)</th>
                         <th>Constraints</th>
+                        <th>Features</th>
                         <th>Source</th>
                     </tr>
                 </thead>
@@ -243,7 +240,6 @@ def generate_html(models_data):
                 const spec = model.model_spec || {{}};
                 const pricing = spec.pricing || {{}};
                 const constraints = spec.constraints || {{}};
-                const capabilities = spec.capabilities || {{}};
                 
                 const row = document.createElement('tr');
                 
@@ -251,8 +247,8 @@ def generate_html(models_data):
                 const cap = (name, val) => val ? `<span class="capability-tag cap-true">${{name}}</span>` : '';
 
                 // Pricing display
-                const inputPrice = pricing.input?.usd !== undefined ? `$${{pricing.input.usd}}` : '-';
-                const outputPrice = pricing.output?.usd !== undefined ? `$${{pricing.output.usd}}` : '-';
+                const genPrice = pricing.generation?.usd !== undefined ? `$${{pricing.generation.usd}}` : '-';
+                const upscale2x = pricing.upscale?.['2x']?.usd !== undefined ? `$${{pricing.upscale['2x'].usd}}` : '-';
                 
                 row.innerHTML = `
                     <td>
@@ -264,22 +260,15 @@ def generate_html(models_data):
                     </td>
                     <td>${{formatDate(model.created)}}</td>
                     <td>
-                        <div>In: <span class="price-tag">${{inputPrice}}</span></div>
-                        <div style="margin-top:2px;">Out: <span class="price-tag">${{outputPrice}}</span></div>
+                        <div>Gen: <span class="price-tag">${{genPrice}}</span></div>
+                        <div style="margin-top:2px; font-size:0.85em; color:#666;">Upscale 2x: ${{upscale2x}}</div>
                     </td>
                     <td>
-                        ${{spec.availableContextTokens?.toLocaleString() || '-'}}
+                        <small>Steps: ${{constraints.steps?.default}} (Max: ${{constraints.steps?.max}})</small><br>
+                        <small>Limit: ${{constraints.promptCharacterLimit}} chars</small>
                     </td>
                     <td>
-                        ${{cap('Reasoning', capabilities.supportsReasoning)}}
-                        ${{cap('Vision', capabilities.supportsVision)}}
-                        ${{cap('Web Search', capabilities.supportsWebSearch)}}
-                        ${{cap('Func Call', capabilities.supportsFunctionCalling)}}
-                        ${{cap('Code Opt', capabilities.optimizedForCode)}}
-                    </td>
-                    <td>
-                        <small>Temp: ${{constraints.temperature?.default || '-'}}</small><br>
-                        <small>Top P: ${{constraints.top_p?.default || '-'}}</small>
+                        ${{cap('Web Search', spec.supportsWebSearch)}}
                     </td>
                     <td>
                         ${{spec.modelSource ? `<a href="${{spec.modelSource}}" target="_blank">Source</a>` : '-'}}
@@ -305,10 +294,8 @@ def generate_html(models_data):
                         return (a.model_spec?.name || a.id).localeCompare(b.model_spec?.name || b.id);
                     case 'date_new':
                         return b.created - a.created;
-                    case 'context_high':
-                         return (b.model_spec?.availableContextTokens || 0) - (a.model_spec?.availableContextTokens || 0);
                     case 'price_low':
-                        return (a.model_spec?.pricing?.input?.usd || 0) - (b.model_spec?.pricing?.input?.usd || 0);
+                        return (a.model_spec?.pricing?.generation?.usd || 0) - (b.model_spec?.pricing?.generation?.usd || 0);
                     default:
                         return 0;
                 }}

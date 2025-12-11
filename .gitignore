@@ -7,3 +7,5 @@ __pycache__/
 output/
 .vscode/
 .idea/
+
+!output/index.html
