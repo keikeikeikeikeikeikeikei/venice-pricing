@@ -11,7 +11,14 @@ echo "🚀 Starting Venice Pricing Update..."
 echo "📥 Fetching latest data from Venice API..."
 python3 fetch_venice_pricing.py
 
-# 2. Generate HTML files
+# 2. Fetch video pricing
+echo "💰 Fetching video model pricing..."
+python3 fetch_video_pricing.py
+
+# 3. Merge data for dashboard
+python3 merge_dashboard_data.py
+
+# 4. Generate HTML files
 echo "⚙️ Generating HTML model lists..."
 python3 generate_model_list.py
 python3 generate_image_model_list.py

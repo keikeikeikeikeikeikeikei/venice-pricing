@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 .env
 .venv
+venv/
 .gemini/
 output/
 .vscode/
@@ -11,3 +12,7 @@ output/
 
 !output/index.html
 !output/pricing_dashboard.html
+
+# Logs
+data/network_log.json
+data/video_quote_requests.json

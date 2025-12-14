@@ -15,7 +15,7 @@ Run the automation script to fetch the latest data and rebuild the HTML files:
 Open `output/index.html` in your web browser to navigate the generated lists:
 - **Text Models**: Pricing, context window, capabilities (Reasoning, Code, etc.)
 - **Image Models**: Generation costs, upscale pricing, constraints.
-- **Video Models**: Resolution, duration, and audio support.
+- **Video Models**: **Real-time pricing** (automatically fetched), resolution, duration, and audio support.
 
 ## Project Structure
 
@@ -23,5 +23,13 @@ Open `output/index.html` in your web browser to navigate the generated lists:
 - `output/`: Generated HTML files.
 - `scripts/`: Python scripts for fetching data and generating HTML.
 
+## Features
+
+- **Automated Data Fetching**: Pulls latest model information from Venice.ai API
+- **Dynamic Video Pricing**: Automatically queries the Video Quote API for real-time pricing
+- **Interactive Tables**: Sort and filter models by various criteria
+- **Responsive Design**: Works on desktop and mobile devices
+
 ## Requirements
 - Python 3
+- `requests` library (for API calls)

@@ -8,7 +8,7 @@ import pathlib
 
 # Paths
 BASE_DIR = pathlib.Path(__file__).resolve().parent
-JSON_PATH = BASE_DIR.parent / "data" / "venice_models_video.json"
+JSON_PATH = BASE_DIR.parent / "data" / "venice_models_video_with_pricing.json"
 HTML_PATH = BASE_DIR.parent / "output" / "venice_models_video.html"
 
 def generate_html(models_data):
@@ -205,6 +205,7 @@ def generate_html(models_data):
         .bool-true {{ background-color: rgba(25, 135, 84, 0.15); color: #198754; }}
         .bool-false {{ background-color: rgba(220, 53, 69, 0.15); color: #dc3545; }}
         .price-note {{ font-size: 0.9em; color: #6c757d; font-style: italic; }}
+        .price-value {{ font-size: 1em; font-weight: 600; color: var(--primary-color); }}
         a {{ color: var(--primary-color); text-decoration: none; }}
         a:hover {{ text-decoration: underline; }}
 
@@ -320,6 +321,13 @@ def generate_html(models_data):
                 const hasAudio = constraints.audio ? '<span class="bool-tag bool-true">Audio</span>' : '<span class="bool-tag bool-false">No Audio</span>';
                 const resolutions = (constraints.resolutions || []).join(', ') || '-';
                 
+                // Format pricing
+                let pricingHtml = '\u003cspan class=\"price-note\"\u003eN/A\u003c/span\u003e';
+                if (model.pricing && model.pricing.base_price_usd !== undefined) {{
+                    const price = model.pricing.base_price_usd;
+                    pricingHtml = `\u003cspan class=\"price-value\"\u003e$${{price.toFixed(2)}}\u003c/span\u003e`;
+                }}
+                
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>
@@ -327,7 +335,7 @@ def generate_html(models_data):
                         <div class="model-id">${{model.id}}</div>
                     </td>
                     <td>${{formatDate(model.created)}}</td>
-                    <td><span class="price-note">Dynamic</span></td>
+                    <td>${{pricingHtml}}</td>
                     <td><span class="tag">${{modelType}}</span></td>
                     <td>${{resolutions}}</td>
                     <td>${{hasAudio}}</td>

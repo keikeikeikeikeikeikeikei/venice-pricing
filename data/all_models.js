@@ -511,7 +511,7 @@ window.veniceModels = {
       "type": "text"
     },
     {
-      "created": 1765503106,
+      "created": 1765673532,
       "id": "claude-opus-45",
       "model_spec": {
         "pricing": {
@@ -1147,7 +1147,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.28,
+        "quote_params": {
+          "model": "wan-2.5-preview-image-to-video",
+          "prompt": "quote",
+          "resolution": "480p",
+          "duration": "5s",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1175,7 +1185,16 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.28,
+        "quote_params": {
+          "model": "wan-2.5-preview-text-to-video",
+          "prompt": "quote",
+          "resolution": "480p",
+          "duration": "5s"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1206,7 +1225,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.06,
+        "quote_params": {
+          "model": "wan-2.2-a14b-text-to-video",
+          "prompt": "quote",
+          "resolution": "480p",
+          "duration": "5s",
+          "aspect_ratio": "16:9"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1231,10 +1260,20 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.88,
+        "quote_params": {
+          "model": "wan-2.1-pro-image-to-video",
+          "prompt": "quote",
+          "duration": "6s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "ltx-2-fast-image-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1267,10 +1306,22 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 1.06,
+        "quote_params": {
+          "model": "ltx-2-fast-image-to-video",
+          "prompt": "quote",
+          "resolution": "2160p",
+          "duration": "6s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico",
+          "audio": true
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "ltx-2-fast-text-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1303,10 +1354,21 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 1.06,
+        "quote_params": {
+          "model": "ltx-2-fast-text-to-video",
+          "prompt": "quote",
+          "resolution": "2160p",
+          "duration": "6s",
+          "aspect_ratio": "16:9",
+          "audio": true
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "ltx-2-full-image-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1334,10 +1396,22 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 1.58,
+        "quote_params": {
+          "model": "ltx-2-full-image-to-video",
+          "prompt": "quote",
+          "resolution": "2160p",
+          "duration": "6s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico",
+          "audio": true
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "ltx-2-full-text-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1365,7 +1439,18 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 1.58,
+        "quote_params": {
+          "model": "ltx-2-full-text-to-video",
+          "prompt": "quote",
+          "resolution": "2160p",
+          "duration": "6s",
+          "aspect_ratio": "16:9",
+          "audio": true
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1389,10 +1474,19 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.22,
+        "quote_params": {
+          "model": "ovi-image-to-video",
+          "prompt": "quote",
+          "duration": "5s",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "kling-2.6-pro-text-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1417,10 +1511,20 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.77,
+        "quote_params": {
+          "model": "kling-2.6-pro-text-to-video",
+          "prompt": "quote",
+          "duration": "5s",
+          "aspect_ratio": "16:9",
+          "audio": true
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "kling-2.6-pro-image-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1441,7 +1545,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.77,
+        "quote_params": {
+          "model": "kling-2.6-pro-image-to-video",
+          "prompt": "quote",
+          "duration": "5s",
+          "image_url": "https://venice.ai/favicon.ico",
+          "audio": true
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1469,7 +1583,16 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.39,
+        "quote_params": {
+          "model": "kling-2.5-turbo-pro-text-to-video",
+          "prompt": "quote",
+          "duration": "5s",
+          "aspect_ratio": "16:9"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1493,7 +1616,16 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.39,
+        "quote_params": {
+          "model": "kling-2.5-turbo-pro-image-to-video",
+          "prompt": "quote",
+          "duration": "5s",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
       "created": 1764806400,
@@ -1523,7 +1655,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.09,
+        "quote_params": {
+          "model": "longcat-distilled-image-to-video",
+          "prompt": "quote",
+          "resolution": "720p",
+          "duration": "5s",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
       "created": 1764806400,
@@ -1557,7 +1699,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.09,
+        "quote_params": {
+          "model": "longcat-distilled-text-to-video",
+          "prompt": "quote",
+          "resolution": "720p",
+          "duration": "5s",
+          "aspect_ratio": "16:9"
+        }
+      }
     },
     {
       "created": 1764806400,
@@ -1587,7 +1739,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.25,
+        "quote_params": {
+          "model": "longcat-image-to-video",
+          "prompt": "quote",
+          "resolution": "720p",
+          "duration": "5s",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
       "created": 1764806400,
@@ -1621,7 +1783,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.25,
+        "quote_params": {
+          "model": "longcat-text-to-video",
+          "prompt": "quote",
+          "resolution": "720p",
+          "duration": "5s",
+          "aspect_ratio": "16:9"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1653,7 +1825,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.44,
+        "quote_params": {
+          "model": "veo3-fast-text-to-video",
+          "prompt": "quote",
+          "resolution": "1080p",
+          "duration": "4s",
+          "aspect_ratio": "16:9"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1678,7 +1860,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.88,
+        "quote_params": {
+          "model": "veo3-fast-image-to-video",
+          "prompt": "quote",
+          "duration": "8s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1709,7 +1901,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.88,
+        "quote_params": {
+          "model": "veo3-full-text-to-video",
+          "prompt": "quote",
+          "resolution": "1080p",
+          "duration": "4s",
+          "aspect_ratio": "16:9"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1734,10 +1936,20 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 1.76,
+        "quote_params": {
+          "model": "veo3-full-image-to-video",
+          "prompt": "quote",
+          "duration": "8s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "veo3.1-fast-text-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1766,10 +1978,21 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.66,
+        "quote_params": {
+          "model": "veo3.1-fast-text-to-video",
+          "prompt": "quote",
+          "resolution": "1080p",
+          "duration": "4s",
+          "aspect_ratio": "16:9",
+          "audio": true
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "veo3.1-fast-image-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1795,10 +2018,22 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 1.32,
+        "quote_params": {
+          "model": "veo3.1-fast-image-to-video",
+          "prompt": "quote",
+          "resolution": "1080p",
+          "duration": "8s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico",
+          "audio": true
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "veo3.1-full-text-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1827,10 +2062,21 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 1.76,
+        "quote_params": {
+          "model": "veo3.1-full-text-to-video",
+          "prompt": "quote",
+          "resolution": "1080p",
+          "duration": "4s",
+          "aspect_ratio": "16:9",
+          "audio": true
+        }
+      }
     },
     {
-      "created": 1765503106,
+      "created": 1765673535,
       "id": "veo3.1-full-image-to-video",
       "model_spec": {
         "privacy": "anonymized",
@@ -1856,7 +2102,19 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 3.52,
+        "quote_params": {
+          "model": "veo3.1-full-image-to-video",
+          "prompt": "quote",
+          "resolution": "1080p",
+          "duration": "8s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico",
+          "audio": true
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1886,7 +2144,18 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.44,
+        "quote_params": {
+          "model": "sora-2-image-to-video",
+          "prompt": "quote",
+          "resolution": "720p",
+          "duration": "4s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1917,7 +2186,18 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 2.22,
+        "quote_params": {
+          "model": "sora-2-pro-image-to-video",
+          "prompt": "quote",
+          "resolution": "1080p",
+          "duration": "4s",
+          "aspect_ratio": "16:9",
+          "image_url": "https://venice.ai/favicon.ico"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1947,7 +2227,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 0.44,
+        "quote_params": {
+          "model": "sora-2-text-to-video",
+          "prompt": "quote",
+          "resolution": "720p",
+          "duration": "4s",
+          "aspect_ratio": "16:9"
+        }
+      }
     },
     {
       "created": 1758825748,
@@ -1978,139 +2268,17 @@ window.veniceModels = {
       },
       "object": "model",
       "owned_by": "venice.ai",
-      "type": "video"
-    }
-  ],
-  "embedding": [
-    {
-      "created": 1741924661,
-      "id": "text-embedding-bge-m3",
-      "model_spec": {
-        "pricing": {
-          "input": {
-            "usd": 0.15,
-            "diem": 0.15
-          },
-          "output": {
-            "usd": 0.6,
-            "diem": 0.6
-          }
-        },
-        "name": "BGE-M3",
-        "modelSource": "https://huggingface.co/BAAI/bge-m3",
-        "offline": false,
-        "traits": []
-      },
-      "object": "model",
-      "owned_by": "venice.ai",
-      "type": "embedding"
-    }
-  ],
-  "tts": [
-    {
-      "created": 1742418046,
-      "id": "tts-kokoro",
-      "model_spec": {
-        "pricing": {
-          "input": {
-            "usd": 3.5,
-            "diem": 3.5
-          }
-        },
-        "voices": [
-          "af_alloy",
-          "af_aoede",
-          "af_bella",
-          "af_heart",
-          "af_jadzia",
-          "af_jessica",
-          "af_kore",
-          "af_nicole",
-          "af_nova",
-          "af_river",
-          "af_sarah",
-          "af_sky",
-          "am_adam",
-          "am_echo",
-          "am_eric",
-          "am_fenrir",
-          "am_liam",
-          "am_michael",
-          "am_onyx",
-          "am_puck",
-          "am_santa",
-          "bf_alice",
-          "bf_emma",
-          "bf_lily",
-          "bm_daniel",
-          "bm_fable",
-          "bm_george",
-          "bm_lewis",
-          "ef_dora",
-          "em_alex",
-          "em_santa",
-          "ff_siwis",
-          "hf_alpha",
-          "hf_beta",
-          "hm_omega",
-          "hm_psi",
-          "if_sara",
-          "im_nicola",
-          "jf_alpha",
-          "jf_gongitsune",
-          "jf_nezumi",
-          "jf_tebukuro",
-          "jm_kumo",
-          "pf_dora",
-          "pm_alex",
-          "pm_santa",
-          "zf_xiaobei",
-          "zf_xiaoni",
-          "zf_xiaoxiao",
-          "zf_xiaoyi",
-          "zm_yunjian",
-          "zm_yunxi",
-          "zm_yunxia",
-          "zm_yunyang"
-        ],
-        "name": "Kokoro Text to Speech",
-        "modelSource": "https://huggingface.co/hexgrad/Kokoro-82M",
-        "offline": false,
-        "traits": []
-      },
-      "object": "model",
-      "owned_by": "venice.ai",
-      "type": "tts"
-    }
-  ],
-  "upscale": [
-    {
-      "created": 1744453050,
-      "id": "upscaler",
-      "model_spec": {
-        "pricing": {
-          "generation": {
-            "usd": 0.01,
-            "diem": 0.01
-          },
-          "upscale": {
-            "2x": {
-              "usd": 0.02,
-              "diem": 0.02
-            },
-            "4x": {
-              "usd": 0.08,
-              "diem": 0.08
-            }
-          }
-        },
-        "name": "Upscaler",
-        "offline": false,
-        "traits": []
-      },
-      "object": "model",
-      "owned_by": "venice.ai",
-      "type": "upscale"
+      "type": "video",
+      "pricing": {
+        "base_price_usd": 2.22,
+        "quote_params": {
+          "model": "sora-2-pro-text-to-video",
+          "prompt": "quote",
+          "resolution": "1080p",
+          "duration": "4s",
+          "aspect_ratio": "16:9"
+        }
+      }
     }
   ]
 };

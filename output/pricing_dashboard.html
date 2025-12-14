@@ -451,8 +451,21 @@
                 }
             },
             video: {
-                getPrice: (m) => 0,
-                renderPrice: (m, max) => `<span class="tag">Dynamic</span>`,
+                getPrice: (m) => get(m, 'pricing.base_price_usd', 0),
+                renderPrice: (m, max) => {
+                    const p = get(m, 'pricing.base_price_usd');
+                    if (p === undefined) return `<span class="tag">Dynamic</span>`;
+
+                    const pct = max > 0 ? (p / max) * 100 : 0;
+                    return `
+                    <div class="price-cell">
+                        <div class="price-val">$${p.toFixed(2)}</div>
+                        <div class="rel-bar-container">
+                            <div class="rel-bar-bg"><div class="rel-bar-fill ${getBarColor(pct)}" style="width:${pct}%"></div></div>
+                        </div>
+                    </div>
+                `;
+                },
                 renderCaps: (m) => '',
                 checkFilter: (m, fid) => {
                     if (fid === 'audio') return get(m, 'model_spec.constraints.audio', false);
@@ -619,7 +632,7 @@
                     const audio = get(spec, 'constraints.audio') ? '✅' : '❌';
                     rowHtml = `
                     <td>${nameCell}</td>
-                    <td>${strategies.video.renderPrice(m, 0)}</td>
+                    <td>${strategies.video.renderPrice(m, maxPrice)}</td>
                     <td style="font-size:0.85em; max-width:200px;">${res}</td>
                     <td>${audio}</td>
                     <td>${dateCell}</td>
