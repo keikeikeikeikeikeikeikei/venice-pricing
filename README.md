@@ -2,6 +2,8 @@
 
 This project fetches model data from the Venice.ai API and generates interactive HTML tables for comparing pricing, capabilities, and constraints of Text, Image, and Video models.
 
+![Pricing Dashboard Example](images/dashboard.png)
+
 ## Usage
 
 ### 1. Update Data & Generate Lists
