@@ -1,6 +1,6 @@
 # Venice Pricing & Model List
 
-[![Live Dashboard](https://img.shields.io/badge/Live-Dashboard-blue?style=for-the-badge)](https://keikeikeikeikeikeikeikei.github.io/venice-pricing/)
+[![Live Dashboard](https://img.shields.io/badge/Live-Dashboard-blue?style=for-the-badge)](https://keikeikeikeikeikeikeikei.github.io/venice-model-dashboard/)
 
 This project fetches model data from the Venice.ai API and generates interactive HTML tables for comparing pricing, capabilities, and constraints of Text, Image, and Video models.
 
