@@ -488,7 +488,8 @@
                 { id: 'supportsVision', label: '👁️ Vision' },
                 { id: 'supportsFunctionCalling', label: '🛠️ Func Call' },
                 { id: 'optimizedForCode', label: '💻 Code' },
-                { id: 'supportsWebSearch', label: '🌐 Web Search' }
+                { id: 'supportsWebSearch', label: '🌐 Web Search' },
+                { id: 'supportsLogProbs', label: '📊 Logprobs' }
             ],
             image: [
                 { id: 'hasUpscale', label: '🔍 Upscale' }
@@ -551,7 +552,8 @@
                         { k: 'supportsVision', i: '👁️', t: 'Vision' },
                         { k: 'supportsFunctionCalling', i: '🛠️', t: 'Function Calling' },
                         { k: 'optimizedForCode', i: '💻', t: 'Code Optimized' },
-                        { k: 'supportsWebSearch', i: '🌐', t: 'Web Search' }
+                        { k: 'supportsWebSearch', i: '🌐', t: 'Web Search' },
+                        { k: 'supportsLogProbs', i: '📊', t: 'Logprobs' }
                     ];
                     return `<div class="cap-icons">
                     ${caps.map(cap => `<span class="cap-icon ${c[cap.k] ? 'cap-active' : ''}" title="${cap.t}">${cap.i}</span>`).join('')}
