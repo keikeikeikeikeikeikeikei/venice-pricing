@@ -604,6 +604,7 @@
             }
         };
 
+
         // --- Configuration ---
 
         const filters = {
@@ -660,6 +661,7 @@
                     const avg = (input + output) / 2;
                     const pct = max > 0 ? (avg / max) * 100 : 0;
 
+
                     return `
                         <div class="price-bridge" title="Avg: $${avg.toFixed(3)}/1M tokens">
                             <div class="price-bridge-top">
@@ -667,7 +669,9 @@
                                     <span class="price-value-num">$${input}</span>
                                     <span class="price-value-label">Input</span>
                                 </div>
-                                <div class="price-bridge-avg-info">Avg $${avg.toFixed(2)}</div>
+                                <div class="price-bridge-avg-info">
+                                    Avg $${avg.toFixed(2)}
+                                </div>
                                 <div class="price-value-group" style="text-align: right;">
                                     <span class="price-value-num">$${output}</span>
                                     <span class="price-value-label">Output</span>
